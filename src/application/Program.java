@@ -5,6 +5,7 @@ import db.DB;
 import db.DbException;
 import db.DbIntegrityException;
 import model.entities.Department;
+import model.entities.Seller;
 
 import java.sql.*;
 import java.text.ParseException;
@@ -23,8 +24,10 @@ public class Program {
             st = conn.createStatement();
 
             Department obj = new Department(1, "Books");
+            Seller seller = new Seller(21, "Bob Brown", "bob@gmail.com", LocalDate.now(),
+                    3200.00, obj);
 
-            System.out.println(obj);
+            System.out.println(seller);
 
 
 

@@ -80,12 +80,12 @@ public class Seller implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Seller seller = (Seller) o;
-        return Objects.equals(name, seller.name) && Objects.equals(email, seller.email);
+        return id.equals(seller.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, email);
+        return Objects.hash(id);
     }
 
     @Override
@@ -93,7 +93,7 @@ public class Seller implements Serializable {
         return "name: " + name + '\n' +
                 "email: " + email + '\n' +
                 "birthDate: " + birthDate + '\n' +
-                "baseSalary: " + baseSalary +
+                "baseSalary: " + String.format("%,.2f", baseSalary) +
                 ", department: " + department;
     }
 }
