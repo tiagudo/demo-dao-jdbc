@@ -4,6 +4,7 @@ import com.mysql.cj.jdbc.StatementImpl;
 import db.DB;
 import db.DbException;
 import db.DbIntegrityException;
+import model.entities.Department;
 
 import java.sql.*;
 import java.text.ParseException;
@@ -21,6 +22,9 @@ public class Program {
             conn.setAutoCommit(false);
             st = conn.createStatement();
 
+            Department obj = new Department(1, "Books");
+
+            System.out.println(obj);
 
 
 
