@@ -4,6 +4,9 @@ import com.mysql.cj.jdbc.StatementImpl;
 import db.DB;
 import db.DbException;
 import db.DbIntegrityException;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
+import model.dao.impl.SellerDaoJDBC;
 import model.entities.Department;
 import model.entities.Seller;
 
@@ -26,6 +29,8 @@ public class Program {
             Department obj = new Department(1, "Books");
             Seller seller = new Seller(21, "Bob Brown", "bob@gmail.com", LocalDate.now(),
                     3200.00, obj);
+
+            SellerDao sellerDao = DaoFactory.createSellerDao();
 
             System.out.println(seller);
 
